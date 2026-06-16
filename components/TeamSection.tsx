@@ -1,12 +1,9 @@
 "use client";
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "@/contexts/LanguageContext";
 
-const TEAM_IMAGES = [
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3F0G0vBzSnzuSbF0F0g5zLwIR6B/hf_20260616_001615_696abbe3-abf1-45f6-815d-868d9cf62c65.png",
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3F0G0vBzSnzuSbF0F0g5zLwIR6B/hf_20260616_001732_46f16e64-8d76-4a97-b989-36028f7f1abb.png",
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3F0G0vBzSnzuSbF0F0g5zLwIR6B/hf_20260616_001814_a5f278fa-5a72-4dd7-aa14-414786f48e46.png",
-];
+const TEAM_IMAGES = ["/images/team-1.jpg", "/images/team-2.jpg", "/images/team-3.jpg"];
 
 export default function TeamSection() {
   const { t } = useTranslation();
@@ -42,9 +39,11 @@ export default function TeamSection() {
               transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="team-portrait">
-                <img
+                <Image
                   src={TEAM_IMAGES[i]}
                   alt={member.name}
+                  fill
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   loading="lazy"
                 />
                 <div className="team-overlay" />

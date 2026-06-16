@@ -3,10 +3,8 @@ import { useEffect, useRef } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "@/contexts/LanguageContext";
 
-const HERO_VIDEO =
-  "https://assets.mixkit.co/videos/preview/mixkit-woman-getting-her-hair-done-at-a-beauty-salon-32958-large.mp4";
-const HERO_POSTER =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3F0G0vBzSnzuSbF0F0g5zLwIR6B/hf_20260616_001326_d55628c9-06a5-422c-8416-79db55cfc788.png";
+const HERO_VIDEO = "/video/hero.mp4";
+const HERO_POSTER = "/images/hero-poster.jpg";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 

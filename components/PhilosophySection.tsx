@@ -1,9 +1,10 @@
 "use client";
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "@/contexts/LanguageContext";
 
 const PHILOSOPHY_IMG =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3F0G0vBzSnzuSbF0F0g5zLwIR6B/hf_20260616_001324_c42a5a50-8165-4391-8c6c-c0c4f7b329da.png";
+  "https://images.unsplash.com/photo-1621795092981-8db25a07d4a9?w=1200&q=85&fit=crop";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -63,9 +64,11 @@ export default function PhilosophySection() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.1, ease }}
           >
-            <img
+            <Image
               src={PHILOSOPHY_IMG}
               alt="Coiffure artistique - Maison Céleste Paris"
+              fill
+              sizes="(max-width: 1023px) 100vw, 60vw"
               loading="lazy"
             />
           </motion.div>

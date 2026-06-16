@@ -1,14 +1,15 @@
 "use client";
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "@/contexts/LanguageContext";
 
 const SERVICE_IMAGES = [
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&q=90&fit=crop",
-  "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=85&fit=crop",
-  "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=85&fit=crop",
-  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=85&fit=crop",
-  "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=85&fit=crop",
-  "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1613754773306-532ec48b0de5?w=1800&q=90&fit=crop",
+  "https://images.unsplash.com/photo-1712213396688-c6f2d536671f?w=900&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1717160675643-53a7a2ebaa9f?w=900&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=900&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1634449571017-5fecfd26ad76?w=900&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=900&q=85&fit=crop",
 ];
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -47,9 +48,15 @@ export default function ServicesSection() {
               transition={{ duration: 0.7, delay: i * 0.08, ease }}
             >
               <div className="service-card-image">
-                <img
+                <Image
                   src={SERVICE_IMAGES[i] ?? SERVICE_IMAGES[0]}
                   alt={service.name}
+                  fill
+                  sizes={
+                    i === 0
+                      ? "(max-width: 1023px) 100vw, 66vw"
+                      : "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  }
                   loading="lazy"
                 />
               </div>

@@ -19,6 +19,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hair-salon-fawn.vercel.app"),
   title: "Maison Céleste - Salon de Coiffure Paris",
   description:
     "Salon de coiffure de luxe à Paris. Coupes, colorations, soins et coiffures de mariage. Expertise, créativité et soin personnalisé.",
@@ -28,6 +29,13 @@ export const metadata: Metadata = {
     description: "Salon de coiffure de luxe à Paris. Coupes, colorations, soins et coiffures de mariage.",
     locale: "fr_FR",
     type: "website",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maison Céleste - Salon de Coiffure Paris",
+    description: "Salon de coiffure de luxe à Paris. Coupes, colorations, soins et coiffures de mariage.",
+    images: ["/opengraph-image"],
   },
 };
 
