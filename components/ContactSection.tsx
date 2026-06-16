@@ -143,6 +143,23 @@ export default function ContactSection() {
             )}
           </motion.div>
         </div>
+
+        <motion.div
+          className="map-embed"
+          initial={reduce ? false : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <iframe
+            title="Maison Céleste - Localisation"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(
+              `${SALON.address.street}, ${SALON.address.postal} ${SALON.address.city}, ${SALON.address.country}`
+            )}&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </motion.div>
       </div>
     </section>
   );
