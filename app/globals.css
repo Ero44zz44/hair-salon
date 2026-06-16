@@ -206,6 +206,14 @@ h1, h2, h3 { font-family: var(--font-display), 'Cormorant Garamond', serif; font
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
+.nav.menu-open {
+  pointer-events: none;
+}
+
+.nav.menu-open .hamburger {
+  pointer-events: auto;
+}
+
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -348,7 +356,7 @@ h1, h2, h3 { font-family: var(--font-display), 'Cormorant Garamond', serif; font
 
 @media (max-width: 1023px) {
   .philosophy-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .philosophy-image { aspect-ratio: 4/3; }
+  .philosophy-image { aspect-ratio: 4/5; }
 }
 
 /* ─── Services ─── */

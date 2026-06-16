@@ -33,7 +33,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`nav${scrolled ? " scrolled" : ""}`}>
+      <nav className={`nav${scrolled ? " scrolled" : ""}${menuOpen ? " menu-open" : ""}`}>
         <a href="#" className="nav-logo">{SALON.name}</a>
 
         <ul className="nav-links" style={{ margin: "0 auto" }}>
