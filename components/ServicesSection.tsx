@@ -3,12 +3,12 @@ import { motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "@/contexts/LanguageContext";
 
 const SERVICE_IMAGES = [
-  "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=90&fit=crop",
+  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&q=90&fit=crop",
   "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=85&fit=crop",
   "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=85&fit=crop",
   "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=85&fit=crop",
-  "https://images.unsplash.com/photo-1582095133179-bfd08e2fb6b8?w=600&q=85&fit=crop",
-  "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=85&fit=crop",
 ];
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -40,7 +40,7 @@ export default function ServicesSection() {
           {items.map((service, i) => (
             <motion.div
               key={service.name}
-              className={`service-card${i === 0 ? " hero" : ""}`}
+              className={`service-card${i === 0 ? " featured" : ""}`}
               initial={reduce ? false : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}

@@ -47,17 +47,16 @@ export default function Nav() {
         <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
           <div className="lang-toggle">
             {(["fr", "en"] as Lang[]).map((l, i) => (
-              <>
-                {i > 0 && <span className="divider" key={`div-${l}`} style={{ color: "var(--border)", fontSize: "0.625rem" }}>|</span>}
+              <span key={l} style={{ display: "contents" }}>
+                {i > 0 && <span className="divider" style={{ color: "var(--border)", fontSize: "0.625rem" }}>|</span>}
                 <button
-                  key={l}
                   onClick={() => setLang(l)}
                   className={lang === l ? "active" : ""}
                   aria-label={`Switch to ${l.toUpperCase()}`}
                 >
                   {l.toUpperCase()}
                 </button>
-              </>
+              </span>
             ))}
           </div>
           <a href="#contact" className="btn-primary nav-links">{t.nav.book}</a>
@@ -77,16 +76,15 @@ export default function Nav() {
       <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
         <div className="lang-toggle" style={{ position: "absolute", top: "1.5rem", right: "5rem" }}>
           {(["fr", "en"] as Lang[]).map((l, i) => (
-            <>
-              {i > 0 && <span key={`div-${l}`} style={{ color: "var(--border)", fontSize: "0.625rem" }}>|</span>}
+            <span key={l} style={{ display: "contents" }}>
+              {i > 0 && <span style={{ color: "var(--border)", fontSize: "0.625rem" }}>|</span>}
               <button
-                key={l}
                 onClick={() => setLang(l)}
                 className={lang === l ? "active" : ""}
               >
                 {l.toUpperCase()}
               </button>
-            </>
+            </span>
           ))}
         </div>
         {links.map((l) => (

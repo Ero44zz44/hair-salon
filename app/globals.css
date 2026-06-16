@@ -365,7 +365,7 @@ h1, h2, h3 { font-family: var(--font-display), 'Cormorant Garamond', serif; font
   background: var(--surface);
 }
 
-.service-card.hero { grid-column: span 2; }
+.service-card.featured { grid-column: span 2; }
 
 .service-card-image {
   position: relative;
@@ -373,8 +373,8 @@ h1, h2, h3 { font-family: var(--font-display), 'Cormorant Garamond', serif; font
   overflow: hidden;
 }
 
-.service-card.hero .service-card-image { aspect-ratio: 16/9; }
-.service-card:not(.hero) .service-card-image { aspect-ratio: 4/3; }
+.service-card.featured .service-card-image { aspect-ratio: 16/9; }
+.service-card:not(.featured) .service-card-image { aspect-ratio: 4/3; }
 
 .service-card-image img {
   width: 100%;
@@ -418,12 +418,12 @@ h1, h2, h3 { font-family: var(--font-display), 'Cormorant Garamond', serif; font
 
 @media (max-width: 1023px) {
   .services-grid { grid-template-columns: 1fr 1fr; }
-  .service-card.hero { grid-column: span 2; }
+  .service-card.featured { grid-column: span 2; }
 }
 
 @media (max-width: 639px) {
   .services-grid { grid-template-columns: 1fr; }
-  .service-card.hero { grid-column: span 1; }
+  .service-card.featured { grid-column: span 1; }
 }
 
 /* ─── Team ─── */
